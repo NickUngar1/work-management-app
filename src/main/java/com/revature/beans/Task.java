@@ -44,5 +44,95 @@ public class Task {
 	@Column(name = "date_time_due")
 	private Date dueAt;
 	
+	public Task() {
+		super();
+	}
+
+	public Task(int taskID, User user, String title, String description, String category, int urgency, Date createdAt,
+			Date dueAt) {
+		super();
+		this.taskID = taskID;
+		this.user = user;
+		this.title = title;
+		this.description = description;
+		this.category = category;
+		this.urgency = urgency;
+		this.createdAt = createdAt;
+		this.dueAt = dueAt;
+	}
+
+	public int getTaskID() {
+		return taskID;
+	}
+
+	public void setTaskID(int taskID) {
+		this.taskID = taskID;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public int getUrgency() {
+		return urgency;
+	}
+
+	public void setUrgency(int urgency) {
+		this.urgency = urgency;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Date getDueAt() {
+		return dueAt;
+	}
+
+	public void setDueAt(Date dueAt) {
+		this.dueAt = dueAt;
+	}
+
+	@Override
+	public String toString() {
+		return "Task [taskID=" + taskID + ", user=" + user + ", title=" + title + ", description=" + description
+				+ ", category=" + category + ", urgency=" + urgency + ", createdAt=" + createdAt + ", dueAt=" + dueAt
+				+ "]";
+	}
+	
+	
+	
 	
 }
