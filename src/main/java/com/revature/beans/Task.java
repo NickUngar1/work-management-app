@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "TASKS")
-class Task {
+public class Task {
 
 	@Id
 	@Column(updatable = false, name = "task_id")
