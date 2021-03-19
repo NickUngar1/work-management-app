@@ -1,6 +1,7 @@
 package com.revature.beans;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,19 +40,31 @@ public class Task {
 	private int urgency;
 	
 	@Column(name = "date_time_created")
-	private Date createdAt;
+	private Timestamp createdAt;
 	
 	@Column(name = "date_time_due")
-	private Date dueAt;
+	private Timestamp dueAt;
 	
 	public Task() {
 		super();
 	}
 
-	public Task(int taskID, User user, String title, String description, String category, int urgency, Date createdAt,
-			Date dueAt) {
+	public Task(int taskID, User user, String title, String description, String category, int urgency,
+			Timestamp createdAt, Timestamp dueAt) {
 		super();
 		this.taskID = taskID;
+		this.user = user;
+		this.title = title;
+		this.description = description;
+		this.category = category;
+		this.urgency = urgency;
+		this.createdAt = createdAt;
+		this.dueAt = dueAt;
+	}
+
+	public Task(User user, String title, String description, String category, int urgency, Timestamp createdAt,
+			Timestamp dueAt) {
+		super();
 		this.user = user;
 		this.title = title;
 		this.description = description;
@@ -109,19 +122,19 @@ public class Task {
 		this.urgency = urgency;
 	}
 
-	public Date getCreatedAt() {
+	public Timestamp getCreatedAt() {
 		return createdAt;
 	}
 
-	public void setCreatedAt(Date createdAt) {
+	public void setCreatedAt(Timestamp createdAt) {
 		this.createdAt = createdAt;
 	}
 
-	public Date getDueAt() {
+	public Timestamp getDueAt() {
 		return dueAt;
 	}
 
-	public void setDueAt(Date dueAt) {
+	public void setDueAt(Timestamp dueAt) {
 		this.dueAt = dueAt;
 	}
 
@@ -131,8 +144,5 @@ public class Task {
 				+ ", category=" + category + ", urgency=" + urgency + ", createdAt=" + createdAt + ", dueAt=" + dueAt
 				+ "]";
 	}
-	
-	
-	
 	
 }
